@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, {useState, useCallback, useRef} from 'react';
 import { Paper, Box, Typography } from '@material-ui/core';
 
 import useRenderCounter from "../../../hooks/useRenderCounter";
@@ -21,7 +21,7 @@ const FixMemo2Inputs = () => {
   const [valueB, setValueB] = useState('');
 
   const clearValueA = useCallback(() => setValueA(''), [])
-  const clearValueB = useCallback(() => setValueB(''), [])
+  const clearValueB = useRef(() => setValueB(''));
 
   return (
     <Paper elevation={2}>
@@ -36,7 +36,7 @@ const FixMemo2Inputs = () => {
           <input type="text" onChange={(e) => setValueB(e.currentTarget.value)}/>
         </Box>
         <Child name='valueA' value={valueA} clearValueA={clearValueA} />
-        <Child name='valueB' value={valueB} clearValueB={clearValueB} />
+        <Child name='valueB' value={valueB} clearValueB={clearValueB.current} />
       </Box>
     </Paper>
   );

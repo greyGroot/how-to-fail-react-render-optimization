@@ -51,16 +51,7 @@ export const routes = [
     // Don't store components in variable inside of functional component
     // https://mobx.js.org/react-optimizations.html#render-lists-in-dedicated-components
     // Conditional rendering in react https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349#a1c2
-    // https://overreacted.io/before-you-memo/
   },
-  // {
-  //   name: "It's about slow code, not about renders",
-  //   path: "/slow-code",
-  //   exact: true,
-  //   component: <div>It's about slow code, not about renders</div>,
-  //   // unique props, functions, key
-  //   // https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render
-  // },
   // {
   //   name: "Price of useCallback",
   //   path: "/price-of-use-callback",

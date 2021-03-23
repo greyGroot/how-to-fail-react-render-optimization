@@ -19,11 +19,11 @@ const setUpdateState = ( updateState ) => ({
 })
 
 const setData = ({
-                   firstNum,
-                   secondNum,
-                   thirdNum,
-                   updateState,
-                 }) => ({
+   firstNum,
+   secondNum,
+   thirdNum,
+   updateState,
+ }) => ({
   type: 'SET_DATA',
   payload: {
     firstNum,

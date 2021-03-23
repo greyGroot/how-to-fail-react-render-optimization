@@ -13,7 +13,7 @@ const BatchStateUpdate = () => {
     <>
       <Grid container spacing={1}>
         <Grid item>
-          <SyncDataUpdate />
+          <BrowserDataUpdate />
         </Grid>
 
         <Grid item>
@@ -21,7 +21,7 @@ const BatchStateUpdate = () => {
         </Grid>
 
         <Grid item>
-          <BrowserDataUpdate />
+          <SyncDataUpdate />
         </Grid>
       </Grid>
 
@@ -31,13 +31,13 @@ const BatchStateUpdate = () => {
 
       <Grid container spacing={1}>
         <Grid item>
+          <SingleDataUpdate />
+        </Grid>
+        <Grid item>
           <ReducerDataUpdate />
         </Grid>
         <Grid item>
           <UnstableDataUpdate />
-        </Grid>
-        <Grid item>
-          <SingleDataUpdate />
         </Grid>
       </Grid>
     </>
