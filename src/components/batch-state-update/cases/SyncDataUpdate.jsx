@@ -59,7 +59,11 @@ const SyncDataUpdate = () => {
 
         <Box mt={2}>
           <Typography>Component was rendered {renderCount} times</Typography>
-          <Button variant="contained" onClick={handleClick}>
+          <Button variant="contained" onClick={() => {
+            setFirstNum(getRandomNumber(1));
+            setSecondNum(getRandomNumber(2));
+            setThirdNum(getRandomNumber(3));
+          }}>
             Update state
           </Button>
           <Button variant="contained" onClick={handleClear}>

@@ -1,53 +1,78 @@
 import React from 'react';
-import {Box, Divider, Grid} from '@material-ui/core'
+import {Box, Grid, Accordion, AccordionSummary, AccordionDetails, Typography} from '@material-ui/core'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ControlledInput from "./cases/ControlledInput";
 import InputWithChildren from "./cases/InputWithChildren";
 import InputWithRef from "./cases/InputWithRef"
 import TwoInputs from "./cases/TwoInputs";
 import MemoTwoInputs from "./cases/MemoTwoInputs";
-import BrokenMemoTwoInputs from "./cases/BrokenMemoTwoInputs";
+import BrokenMemo2Inputs from "./cases/BrokenMemo2Inputs";
 import FixMemo2Inputs from "./cases/FixMemo2Inputs";
 
 const PropsUpdate = () => (
   <>
-    <Grid container spacing={1}>
-      <Grid item>
-        <ControlledInput />
-      </Grid>
-      <Grid item>
-        <InputWithChildren />
-      </Grid>
-      <Grid item>
-        <InputWithRef />
-      </Grid>
-    </Grid>
-
-    <Box m={2}>
-      <Divider />
+    <Box mb={1}>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+        >
+          <Typography variant="h3">No need for Memo</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Grid container spacing={1} justify='center'>
+            <Grid item>
+              <ControlledInput />
+            </Grid>
+            <Grid item>
+              <InputWithChildren />
+            </Grid>
+            <Grid item>
+              <InputWithRef />
+            </Grid>
+          </Grid>
+        </AccordionDetails>
+      </Accordion>
+    </Box>
+    <Box mb={1}>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography variant="h3">I got need for Memo</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Grid container spacing={1} justify='center'>
+            <Grid item>
+              <TwoInputs />
+            </Grid>
+            <Grid item>
+              <MemoTwoInputs />
+            </Grid>
+          </Grid>
+        </AccordionDetails>
+      </Accordion>
     </Box>
 
-    <Grid container spacing={1}>
-      <Grid item>
-        <TwoInputs />
-      </Grid>
-      <Grid item>
-        <MemoTwoInputs />
-      </Grid>
-    </Grid>
-
-    <Box m={2}>
-      <Divider />
-    </Box>
-
-    <Grid container spacing={1}>
-      <Grid item>
-        <BrokenMemoTwoInputs />
-      </Grid>
-      <Grid item>
-        <FixMemo2Inputs />
-      </Grid>
-    </Grid>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+        >
+          <Typography variant="h3">Just Memo it!</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Grid container spacing={1} justify='center'>
+            <Grid item>
+              <BrokenMemo2Inputs />
+            </Grid>
+            <Grid item>
+              <FixMemo2Inputs />
+            </Grid>
+          </Grid>
+        </AccordionDetails>
+      </Accordion>
   </>
 );
 

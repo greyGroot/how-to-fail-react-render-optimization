@@ -1,32 +1,29 @@
-import React, {useState, useCallback, useRef} from 'react';
+import React, { useState } from 'react';
 import { Box, Typography } from '@material-ui/core';
 
 import { MyBox, ParentPaper } from "../../../shared";
 import useRenderCounter from "../../../hooks/useRenderCounter";
 
-const Child = React.memo(({name, value, clearValue}) => {
+const Child = React.memo(({obj, clearValue}) => {
   const { renderCount }  = useRenderCounter()
 
   return (
     <MyBox color="darkgreen" title="Child component">
-      <p>{name}: {value}</p>
+      <p>{obj.name}: {obj.value}</p>
       <p>Render count: {renderCount?.current}</p>
-      <button onClick={clearValue}>Clear {name}</button>
+      <button onClick={clearValue}>Clear {obj.name}</button>
     </MyBox>
 
   );
 })
 
-const FixMemo2Inputs = () => {
+const BrokenMemo2Inputs = () => {
   const [valueA, setValueA] = useState('');
   const [valueB, setValueB] = useState('');
 
-  const clearValueA = useCallback(() => setValueA(''), [])
-  const clearValueB = useRef(() => setValueB(''));
-
   return (
     <ParentPaper>
-      <Typography variant="h4">Fix Memo Two Inputs</Typography>
+      <Typography variant="h4">Broken Memo Two Inputs</Typography>
       <Box mt={2} mb={1}>
         Input A:
         <input
@@ -44,11 +41,11 @@ const FixMemo2Inputs = () => {
         />
       </Box>
 
-      <Child name='valueA' value={valueA} clearValue={clearValueA} />
-      <Child name='valueB' value={valueB} clearValue={clearValueB.current} />
+      <Child obj={{ value: valueA, name: 'valueA'}} clearValue={() => setValueA('')} />
+      <Child obj={{ value: valueB, name: 'valueB'}} clearValue={() => setValueB('')} />
 
     </ParentPaper>
   );
 }
 
-export default FixMemo2Inputs;
+export default BrokenMemo2Inputs;

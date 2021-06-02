@@ -4,37 +4,22 @@ import BatchStateUpdate from "./components/batch-state-update/BatchStateUpdate";
 import PropsUpdate from "./components/props-update/PropsUpdate";
 import ContextUpdate from "./components/context-update/ContextUpdate";
 import SmallComponents from "./components/small-components/SmallComponents";
+import Presentation from "./components/presentation/Presentation"
 
-export const routes = [
+export const pages = [
   {
-    name: "Home page",
-    path: "/",
-    exact: true,
-    component: () => <div>Home page</div>,
-  },
-  {
-    name: "Batch state update",
-    path: "/batch-state-update",
-    exact: true,
-    component: BatchStateUpdate,
+    name: "Presentation",
+    component: Presentation,
   },
   {
     name: "Props update",
-    path: "/props-update",
-    exact: true,
     component: PropsUpdate,
-    // unique props, functions, key
-    // Don’t pass a complex data object as a prop.
-    // Inline Style Attribute and Mui
-    // <React.Element key='something'/>
     // https://habr.com/ru/company/yandex/blog/536682/
     // https://mobx.js.org/react-optimizations.html#dereference-values-late
     // https://youtu.be/ZJJfu2q8Kyo
   },
   {
     name: "Context update",
-    path: "/context-update",
-    exact: true,
     component: ContextUpdate,
     // https://koba04.medium.com/a-secret-parts-of-react-new-context-api-e9506a4578aa
     // https://habr.com/ru/company/yandex/blog/536682/
@@ -44,10 +29,14 @@ export const routes = [
     // https://koba04.medium.com/a-secret-parts-of-react-new-context-api-e9506a4578aa
   },
   {
+    name: "Batch state update",
+    component: BatchStateUpdate,
+    // https://medium.com/swlh/react-state-batch-update-b1b61bd28cd2
+  },
+  {
     name: "Use small components",
-    path: "/small-components",
-    exact: true,
     component: SmallComponents,
+    disabled: true,
     // Don't store components in variable inside of functional component
     // https://mobx.js.org/react-optimizations.html#render-lists-in-dedicated-components
     // Conditional rendering in react https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349#a1c2

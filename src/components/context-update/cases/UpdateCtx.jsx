@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Paper, Box, Typography } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 
+import { MyBox, ParentPaper} from "../../../shared";
 import useRenderCounter from "../../../hooks/useRenderCounter";
 
 const ValueCtx = React.createContext({
@@ -18,12 +19,12 @@ const SubChildB = () => {
   const handleClick = () => update('valueB', value)
 
   return (
-    <div>
-      <p>Sub Child B rendered times: {renderCount.current}</p>
+    <MyBox color="gray" title="Sub Child B">
+      <p>rendered times: {renderCount.current}</p>
       <p>value B: {valueB}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value B</button>
-    </div>
+    </MyBox>
   );
 }
 
@@ -36,12 +37,12 @@ const SubChildA = () => {
   const handleClick = () => update('valueA', value)
 
   return (
-    <div>
-      <p>Sub Child A rendered times: {renderCount.current}</p>
+    <MyBox color="gray" title="Sub Child A">
+      <p>rendered times: {renderCount.current}</p>
       <p>value A: {valueA}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value A</button>
-    </div>
+    </MyBox>
   );
 }
 
@@ -49,10 +50,10 @@ const ChildB = () => {
   const { renderCount } = useRenderCounter();
 
   return (
-    <div>
-      <p>Child B rendered times: {renderCount.current}</p>
+    <MyBox color="coral" title="Child B">
+      <p>rendered times: {renderCount.current}</p>
       <SubChildB />
-    </div>
+    </MyBox>
   );
 }
 
@@ -60,10 +61,10 @@ const ChildA = () => {
   const { renderCount } = useRenderCounter();
 
   return (
-    <div>
-      <p>Child A rendered times: {renderCount.current}</p>
+    <MyBox color="coral" title="Child A">
+      <p>rendered times: {renderCount.current}</p>
       <SubChildA />
-    </div>
+    </MyBox>
   );
 }
 
@@ -71,9 +72,9 @@ const Child0 = () => {
   const { renderCount } = useRenderCounter();
 
   return (
-    <div>
+    <MyBox color="blue" title="Child 0">
       <p>Child 0 rendered times: {renderCount.current}</p>
-    </div>
+    </MyBox>
   );
 }
 
@@ -81,12 +82,20 @@ const Child$ = () => {
   const { renderCount } = useRenderCounter();
 
   return (
-    <div>
-      <p>Child$ rendered times: {renderCount.current}</p>
-      <Child0 />
-      <ChildA />
-      <ChildB />
-    </div>
+    <MyBox color="green" title="Child $">
+      <p>rendered times: {renderCount.current}</p>
+      <Grid container spacing={1}>
+        <Grid item>
+          <Child0 />
+        </Grid>
+        <Grid item>
+          <ChildA />
+        </Grid>
+        <Grid item>
+          <ChildB />
+        </Grid>
+      </Grid>
+    </MyBox>
   );
 }
 
@@ -109,14 +118,12 @@ const UpdateCtx = () => {
   }
 
   return (
-    <Paper elevation={2}>
-      <Box p={1}>
-        <Typography variant='body1'>Update Ctx</Typography>
-        <ValueCtx.Provider value={valueCtx}>
-          <Child$ />
-        </ValueCtx.Provider>
-      </Box>
-    </Paper>
+    <ParentPaper>
+      <Typography variant='body1'>Update Ctx</Typography>
+      <ValueCtx.Provider value={valueCtx}>
+        <Child$ />
+      </ValueCtx.Provider>
+    </ParentPaper>
   );
 }
 
