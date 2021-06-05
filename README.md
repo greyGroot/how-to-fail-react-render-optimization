@@ -2,21 +2,35 @@
 
 Use memo or not use memo? When do unexpected renders happen and how to avoid them? We will go through the main cases in React and discuss how to spot them during code review.
 
-# Sources
+## React.context + observedBits
 
-## Must read:
+### Must read:
+* [Investigate use of context + observedBits for performance optimization](https://github.com/reduxjs/react-redux/issues/1018)
+* [A Secret parts of React New Context API](https://koba04.medium.com/a-secret-parts-of-react-new-context-api-e9506a4578aa)
+* [Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+* [React Context: a Hidden Power](https://dev.to/alexkhismatulin/react-context-a-hidden-power-3h8j)
+
+## Batched State Update in Async function
+
+### Must read:
+* [React State Batch Update](https://medium.com/swlh/react-state-batch-update-b1b61bd28cd2)
+* [Simplifying state management in React apps with batched updates](https://blog.logrocket.com/simplifying-state-management-in-react-apps-with-batched-updates/)
+
+## About React Memoization
+
+### Must read:
 * [A (Mostly) Complete Guide to React Rendering Behavior](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
 * [Use React.memo() wisely](https://dmitripavlutin.com/use-react-memo-wisely/#1-reactmemo)
 * [Код на React и TypeScript, который работает быстро. Доклад Яндекса](https://habr.com/ru/company/yandex/blog/536682/)
 * [Fix the slow render before you fix the re-render](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
 * [Reconciliation](https://reactjs.org/docs/reconciliation.html)
   
-## Must watch:
+### Must watch:
 * [Я.Субботник по разработке интерфейсов](https://www.youtube.com/watch?v=wTkeS-X_OIU&t=5652s)
 * [Подробно о React Reconciliation, или Как React добился 60 fps](https://youtu.be/NPXJnKytER4)
 * [ReactJS под капотом](https://youtu.be/A0W2n2azH5s)
 
-### Would be nice to read:  
+#### Would be nice to read:  
 * [What the fuck is memoization](https://whatthefuck.is/memoization)
 * [React, Inline Functions, and Performance](https://medium.com/componentdidblog/react-inline-functions-and-performance-bdff784f5578)
 * [Optimizing React Rendering](https://flexport.engineering/optimizing-react-rendering-part-1-9634469dca02#432e)
