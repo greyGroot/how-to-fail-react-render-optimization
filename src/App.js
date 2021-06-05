@@ -2,12 +2,9 @@ import React, {useState} from "react";
 import {AppBar, Tabs, Tab, Box} from '@material-ui/core'
 
 import "./App.css";
+import { a11yProps } from './utils'
 import { pages } from "./pages";
 
-const a11yProps = (index) => ({
-  id: `simple-tab-${index}`,
-  'aria-controls': `simple-tabpanel-${index}`,
-});
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

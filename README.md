@@ -1,10 +1,32 @@
-# Getting Started with Create React App
+# How to Fail React Render Optimization?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Use memo or not use memo? When do unexpected renders happen and how to avoid them? We will go through the main cases in React and discuss how to spot them during code review.
 
-## Available Scripts
+# Sources
 
-In the project directory, you can run:
+## Must read:
+* [A (Mostly) Complete Guide to React Rendering Behavior](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
+* [Use React.memo() wisely](https://dmitripavlutin.com/use-react-memo-wisely/#1-reactmemo)
+* [Код на React и TypeScript, который работает быстро. Доклад Яндекса](https://habr.com/ru/company/yandex/blog/536682/)
+* [Fix the slow render before you fix the re-render](https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render)
+* [Reconciliation](https://reactjs.org/docs/reconciliation.html)
+  
+## Must watch:
+* [Я.Субботник по разработке интерфейсов](https://www.youtube.com/watch?v=wTkeS-X_OIU&t=5652s)
+* [Подробно о React Reconciliation, или Как React добился 60 fps](https://youtu.be/NPXJnKytER4)
+* [ReactJS под капотом](https://youtu.be/A0W2n2azH5s)
+
+### Would be nice to read:  
+* [What the fuck is memoization](https://whatthefuck.is/memoization)
+* [React, Inline Functions, and Performance](https://medium.com/componentdidblog/react-inline-functions-and-performance-bdff784f5578)
+* [Optimizing React Rendering](https://flexport.engineering/optimizing-react-rendering-part-1-9634469dca02#432e)
+* [Avoid Inline Function Definition in the Render Function](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj#7-avoid-inline-function-definition-in-the-render-function)
+* [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
+* [Your Guide to React.useCallback()](https://dmitripavlutin.com/dont-overuse-react-usecallback/)
+* [Optimize Conditional Rendering in React](https://medium.com/technofunnel/https-medium-com-mayank-gupta-6-88-21-performance-optimizations-techniques-for-react-d15fa52c2349#a1c2)
+* [When should you NOT use React memo?](https://github.com/facebook/react/issues/14463)
+
+## How to start project?
 
 ### `yarn start`
 
@@ -14,57 +36,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
