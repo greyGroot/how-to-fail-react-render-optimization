@@ -38,7 +38,7 @@ const BatchStateUpdate = () => {
             <Typography variant="h3">Lets try one more time</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Grid container spacing={1}>
+            <Grid container spacing={1} justify="center">
               <Grid item>
                 <UnstableDataUpdate />
               </Grid>

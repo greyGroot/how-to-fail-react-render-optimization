@@ -24,7 +24,7 @@ const FixMemo2Inputs = () => {
   const [valueB, setValueB] = useState('');
 
   const clearValueA = useCallback(() => setValueA(''), [])
-  const clearValueB = useRef(() => setValueB(''));
+  const clearValueB = useRef(() => setValueB(''));// { current: щось лежить }
 
   return (
     <ParentPaper>

@@ -26,7 +26,7 @@ const Presentation = () => {
     >
       <Card raised classes={classes}>
         <CardContent>
-          <Typography variant="h2">Hot to Fuck up React.Memoization?</Typography>
+          <Typography variant="h2">How to Fail React Render Optimization?</Typography>
         </CardContent>
         <CardMedia
           component="img"

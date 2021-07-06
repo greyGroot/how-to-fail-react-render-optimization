@@ -31,7 +31,7 @@ const AsyncDataUpdate = () => {
         setThirdNum(getRandomNumber(3));
 
         setUpdateState(false);
-      }, 0);
+      }, 500);
     }
   }, [updateState]);
 
