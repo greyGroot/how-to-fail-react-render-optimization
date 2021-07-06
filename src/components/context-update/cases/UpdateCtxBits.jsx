@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import {Paper, Box, Typography, Grid} from '@material-ui/core'
+import {Typography, Grid} from '@material-ui/core'
 
 import { MyBox, ParentPaper} from "../../../shared";
 import useRenderCounter from "../../../hooks/useRenderCounter";
@@ -14,10 +14,12 @@ const SubChildB = () => {
 
   return (
     <MyBox color="gray" title="Sub Child B">
+
       <p>Sub Child B rendered times: {renderCount.current}</p>
       <p>value B: {valueB}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value B</button>
+
     </MyBox>
   );
 }
@@ -32,10 +34,12 @@ const SubChildA = () => {
 
   return (
     <MyBox color="gray" title="Sub Child A">
+
       <p>Sub Child A rendered times: {renderCount.current}</p>
       <p>value A: {valueA}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value A</button>
+
     </MyBox>
   );
 }
@@ -140,9 +144,11 @@ const CtxProvider = (props) => {
 const UpdateCtxBits = () => (
   <ParentPaper>
     <Typography variant='body1'>Update Ctx Bits</Typography>
+
     <CtxProvider>
       <Child$ />
     </CtxProvider>
+
   </ParentPaper>
 )
 

@@ -4,7 +4,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ControlledInput from "./cases/ControlledInput";
 import InputWithChildren from "./cases/InputWithChildren";
-import InputWithRef from "./cases/InputWithRef"
 import TwoInputs from "./cases/TwoInputs";
 import MemoTwoInputs from "./cases/MemoTwoInputs";
 import BrokenMemo2Inputs from "./cases/BrokenMemo2Inputs";
@@ -26,9 +25,6 @@ const PropsUpdate = () => (
             </Grid>
             <Grid item>
               <InputWithChildren />
-            </Grid>
-            <Grid item>
-              <InputWithRef />
             </Grid>
           </Grid>
         </AccordionDetails>

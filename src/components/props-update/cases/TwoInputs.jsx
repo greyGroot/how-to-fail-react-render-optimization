@@ -9,8 +9,10 @@ const ChildA = ({valueA}) => {
 
   return (
     <MyBox color="blue" title="Child A">
+
       <p>Value: {valueA}</p>
       <p>Render count: {renderCount?.current}</p>
+
     </MyBox>
   );
 }
@@ -20,8 +22,10 @@ const ChildB = ({valueB}) => {
 
   return (
     <MyBox color="cornflowerblue" title="Child B">
+
       <p>Value B: {valueB}</p>
       <p>Render count: {renderCount?.current}</p>
+
     </MyBox>
   );
 }
@@ -33,6 +37,7 @@ const TwoInputs = () => {
   return (
     <ParentPaper>
       <Typography variant="h4">Two Inputs</Typography>
+
       <Box mt={2} mb={1}>
         Input A:
         <input type="text" onChange={(e) => setValueA(e.currentTarget.value)}/>

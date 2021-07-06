@@ -6,7 +6,6 @@ import MemoPocketImg from '../../static/media/memo_pocket.jpeg'
 import RailFailImg from '../../static/media/rail_fail.jpeg'
 import ReactMemoImg from '../../static/media/memo_intro.png'
 import UseCallbackImg from '../../static/media/useCallback_intro.png'
-import UseMemoImg from '../../static/media/useMemo_intro.png'
 
 const useStyles = makeStyles({
   root: {
@@ -58,17 +57,7 @@ const Presentation = () => {
           alt="React.memo"
         />
       </Card>
-      {/*<Card raised classes={classes}>*/}
-      {/*  <CardContent>*/}
-      {/*    <Typography variant="h2">React.useMemo</Typography>*/}
-      {/*  </CardContent>*/}
-      {/*  <CardMedia*/}
-      {/*    component="img"*/}
-      {/*    image={UseMemoImg}*/}
-      {/*    title="React.useMemo"*/}
-      {/*    alt="React.useMemo"*/}
-      {/*  />*/}
-      {/*</Card>*/}
+
       <Card raised classes={classes}>
         <CardContent>
           <Typography variant="h2">React.useCallback</Typography>

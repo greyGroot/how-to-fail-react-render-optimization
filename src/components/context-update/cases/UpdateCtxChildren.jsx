@@ -14,10 +14,12 @@ const SubChildB = () => {
 
   return (
     <MyBox color="gray" title="Sub Child B">
+
       <p>rendered times: {renderCount.current}</p>
       <p>value B: {valueB}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value B</button>
+
     </MyBox>
   );
 }
@@ -32,10 +34,12 @@ const SubChildA = () => {
 
   return (
     <MyBox color="gray" title="Sub Child A">
+
       <p>rendered times: {renderCount.current}</p>
       <p>value A: {valueA}</p>
       <input type="text" onChange={(e) => setValue(e.currentTarget.value)}/>
       <button onClick={handleClick}>Update Value A</button>
+
     </MyBox>
   );
 }
@@ -130,9 +134,11 @@ const CtxProvider = (props) => {
 const UpdateCtxChildren = () => (
   <ParentPaper>
     <Typography variant='body1'>Update Ctx Children</Typography>
+
     <CtxProvider>
       <Child$ />
     </CtxProvider>
+
   </ParentPaper>
 )
 

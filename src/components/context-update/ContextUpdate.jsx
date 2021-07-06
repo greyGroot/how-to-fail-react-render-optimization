@@ -3,10 +3,8 @@ import {Box, Grid, Accordion, AccordionSummary, AccordionDetails, Typography} fr
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import UpdateCtx from './cases/UpdateCtx'
-import UpdateCtxMemo from './cases/UpdateCtxMemo'
 import UpdateCtxChildren from "./cases/UpdateCtxChildren";
 import UpdateCtxBits from "./cases/UpdateCtxBits";
-import UpdateCtxUnstableBits from "./cases/UpdateCtxUnstableBits";
 
 const ContextUpdate = () => (
   <>
@@ -37,7 +35,7 @@ const ContextUpdate = () => (
         <AccordionDetails>
           <Grid container spacing={1} justify='center'>
             <Grid item>
-              <UpdateCtxMemo />
+              {/*<UpdateCtxMemo />*/}
             </Grid>
             <Grid item>
               <UpdateCtxChildren />
@@ -60,7 +58,7 @@ const ContextUpdate = () => (
               <UpdateCtxBits />
             </Grid>
             <Grid item>
-              <UpdateCtxUnstableBits />
+              {/*<UpdateCtxUnstableBits />*/}
             </Grid>
           </Grid>
         </AccordionDetails>

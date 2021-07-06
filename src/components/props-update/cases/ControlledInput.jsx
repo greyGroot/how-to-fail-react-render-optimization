@@ -9,7 +9,9 @@ const ChildComponent = () => {
 
   return (
     <MyBox color="green" title="Child component">
+
       <p>Render count: {renderCount?.current}</p>
+
     </MyBox>
   );
 }
@@ -24,11 +26,13 @@ const ControlledInput = () => {
         Value: {value}
       </Typography>
       <Box mt={2} mb={1}>
+
         <input
           type='text'
           onChange={(e) => setValue(e.currentTarget.value)}
           value={value}
         />
+
       </Box>
 
       <ChildComponent />

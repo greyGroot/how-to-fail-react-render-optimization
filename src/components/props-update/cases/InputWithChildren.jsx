@@ -9,7 +9,9 @@ const ChildComponent = () => {
 
   return (
     <MyBox color="green" title="Child component">
+
       <p>Render count: {renderCount?.current}</p>
+
     </MyBox>
   );
 }
@@ -20,6 +22,7 @@ const ParentComponent = (props) => {
   return (
     <ParentPaper>
       <Typography variant="h4">Input with children</Typography>
+
       <Typography variant='body1'>
         Value: {value}
       </Typography>
